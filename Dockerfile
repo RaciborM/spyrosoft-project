@@ -1,5 +1,5 @@
 #frontend
-FROM node:18 AS frontend-build
+FROM node:20 AS frontend-build
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
@@ -7,7 +7,7 @@ COPY frontend .
 RUN npm run build
 
 #backend
-FROM node:18
+FROM node:20
 WORKDIR /app
 
 COPY backend/package*.json ./backend/
@@ -20,3 +20,4 @@ WORKDIR /app/backend
 
 EXPOSE 3000
 CMD ["npm", "start"]
+
