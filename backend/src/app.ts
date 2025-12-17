@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use('/api/energy', powerRouter);
 
-const frontendPath = path.join(__dirname, '../../frontend');
+const frontendPath = path.join(__dirname, 'frontend');
 app.use(express.static(frontendPath));
 
 app.use((req, res, next) => {
