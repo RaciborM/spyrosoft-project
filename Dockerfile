@@ -26,9 +26,10 @@ COPY --from=backend-build /app/backend/dist ./backend/dist
 COPY --from=backend-build /app/backend/package*.json ./backend/
 COPY --from=backend-build /app/backend/node_modules ./backend/node_modules
 #front
-COPY --from=frontend-build /app/frontend/dist ./frontend/dist
+COPY --from=frontend-build /app/frontend/dist ./backend/frontend
 
 EXPOSE 3000
 
 CMD ["node", "backend/dist/server.js"]
+
 
